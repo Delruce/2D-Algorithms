@@ -1,1 +1,34 @@
 # define a graph
+
+class Graph:
+    def __init__(self):
+        self.nodes = set()
+        self.edges = defaultdict(list)
+        self.distances = {}
+        
+    def add_node(self, node):
+        self.nodes.add(node)
+        
+    def add_edge(self, from_node, to_node, distance):
+        self.edges[from_node].append(to_node)
+        self.distances[(from_node, to_node)] = distance
+
+# define a node class
+
+class Node:
+    def __init__(self, name):
+        self.distance = sys.maxint
+        self.predecessor = None
+        self.name = name
+    
+    def set_distance(self, dist):
+        self.distance = dist
+        
+    def set_predecessor(self, pred):
+        self.predecessor = pred
+        
+    def get_distance(self):
+        return self.distance
+    
+    def get_predecessor(self):
+        return self.predecessor
