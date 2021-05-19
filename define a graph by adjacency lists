@@ -1,4 +1,4 @@
-# define a graph
+# define a new graph
 
 class Graph:
     def __init__(self):
